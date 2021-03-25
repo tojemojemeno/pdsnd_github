@@ -8,7 +8,7 @@ Bikeshare data exploration
 
 
 ### Description
-Describe what your project is about and what it does
+This project explores the Bikeshare data from Washington, Chicago and New York City and provides visualisation and summary.
 
 ### Files used
 Include the files used
