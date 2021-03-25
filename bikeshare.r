@@ -1,7 +1,7 @@
 library(tidyverse)
-ny = read.csv('new-york-city.csv')
-wash = read.csv('washington.csv')
-chi = read.csv('chicago.csv')
+ny <- read.csv('new-york-city.csv')
+wash <- read.csv('washington.csv')
+chi <- read.csv('chicago.csv')
 
 head(ny)
 head(wash)
@@ -12,14 +12,14 @@ head(chi)
 
 
 #dataframes for start stations and their counts in each city in decreasing order
-t_wash=data.frame(count=sort(table(wash$Start.Station), decreasing =TRUE))
-t_chi=data.frame(count=sort(table(chi$Start.Station), decreasing =TRUE))
-t_ny=data.frame(count=sort(table(ny$Start.Station), decreasing =TRUE))
+t_wash<-data.frame(count=sort(table(wash$Start.Station), decreasing =TRUE))
+t_chi<-data.frame(count=sort(table(chi$Start.Station), decreasing =TRUE))
+t_ny<-data.frame(count=sort(table(ny$Start.Station), decreasing =TRUE))
 
 #top 10 start stations in each city
-t1_wash=head(t_wash,10)
-t1_chi=head(t_chi,10)
-t1_ny=head(t_ny,10)
+t1_wash<-head(t_wash,10)
+t1_chi<-head(t_chi,10)
+t1_ny<-head(t_ny,10)
 
 #visualization
 ggplot(aes(x=count.Var1, y=count.Freq), data=t1_wash)+
@@ -79,14 +79,14 @@ ggplot(aes(y=Birth.Year), data= chi)+
 #What is the most common day of week?
 
 # converting date to weekday
-ny$day =weekdays(as.Date(ny$Start.Time))
-wash$day=weekdays(as.Date(wash$Start.Time))
-chi$day=weekdays(as.Date(chi$Start.Time))
+ny$day <-weekdays(as.Date(ny$Start.Time))
+wash$day<-weekdays(as.Date(wash$Start.Time))
+chi$day<-weekdays(as.Date(chi$Start.Time))
 
 #creating dataframe with weekdays and frequency
-ny_day=data.frame(table(ny$day))
-wash_day=data.frame(table(wash$day))
-chi_day=data.frame(table(chi$day))
+ny_day<-data.frame(table(ny$day))
+wash_day<-data.frame(table(wash$day))
+chi_day<-data.frame(table(chi$day))
 
 #visualization
 ny_day %>% 
